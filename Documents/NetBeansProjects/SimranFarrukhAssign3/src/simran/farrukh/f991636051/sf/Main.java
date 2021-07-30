@@ -65,7 +65,11 @@ public class Main {
                System.out.print("Invalid studentID. Must start with lower case "
                        + "s followed by 9 digits");
            }
-       }while(bool==false);        
+       }while(bool==false);
+        
+        System.out.println("Student email: " + email);
+        System.out.println("Student password: " + password);
+        System.out.println("Student studenId: " + studentID);
     }
     
 }
