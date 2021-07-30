@@ -14,7 +14,5 @@ import java.util.regex.*;
 public abstract class Account {
     private String email;
     private String password;
-    
-    
 }
 

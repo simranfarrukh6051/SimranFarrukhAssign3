@@ -6,6 +6,9 @@
 package simran.farrukh.f991636051.sf;
 
 import java.util.Scanner;
+import java.util.regex.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -51,13 +54,18 @@ public class Main {
        {
            System.out.println("Enter the studentID : ");
            studentID=scan.nextLine();
+ 
+           List<StudentAccount> students = new ArrayList<StudentAccount>();
+           StudentAccount stud = new StudentAccount(studentID);
+           students.add(stud);
+           
            bool = validate.validateStudenID(studentID);
            if(bool==false)
            {
                System.out.print("Invalid studentID. Must start with lower case "
                        + "s followed by 9 digits");
            }
-       }while(bool==false);
+       }while(bool==false);        
     }
     
 }

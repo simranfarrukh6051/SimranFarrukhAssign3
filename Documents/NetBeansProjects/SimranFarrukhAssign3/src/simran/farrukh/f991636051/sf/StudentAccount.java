@@ -5,11 +5,15 @@
  */
 package simran.farrukh.f991636051.sf;
 
+
 /**
  *
  * @author Simran
  */
 public class StudentAccount extends Account {
     private String studentID;
-    
+        
+    public StudentAccount (String studentID){
+        this.studentID = studentID;
+    }
 }
