@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package simran.farrukh.f991636051.sf;
+import java.util.Scanner;
+import java.util.regex.*;
 
 /**
  *
@@ -12,4 +14,23 @@ package simran.farrukh.f991636051.sf;
 public abstract class Account {
     private String email;
     private String password;
+    
+    public static void main(String[] args) {
+        
+        Validations validate = new Validations();
+        Scanner scan = new Scanner(System.in);
+        String email, password;
+        
+        boolean bool = false;
+        
+        do{
+            System.out.println("Enter your email: ");
+            email = scan.nextLine();
+            bool = validate.validateEmail(email);
+            if(bool==false){
+                System.out.println("Email is invalid. Please try again.");
+            }
+        }while(bool==false);
+    }
 }
+
