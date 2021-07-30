@@ -30,7 +30,8 @@ public abstract class Account {
             if(bool==false){
                 System.out.println("Email is invalid. Please try again.");
             }
-        }while(bool==false);
+        }
+        while(bool==false);
         
         do{
             System.out.println("Enter your password: ");
@@ -42,7 +43,8 @@ public abstract class Account {
                         + "Password must contain no special characters"
                         + "Password must contain at least 1 number and 2 letters");
             }
-        }while(bool==false);
+        }
+        while(bool==false);
     }
 }
 

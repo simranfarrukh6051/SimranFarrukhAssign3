@@ -17,27 +17,52 @@ public class Validations {
     }
    
     static boolean validatePassword(String password) {
-        if (password.length() < 6) return false; //checks length 
+        if (password.length() < 8) return false; //checks length 
 
-        int characterCount = 0;
-        int numberCount = 0;
-        for (int i = 0; i < password.length(); i++) {//chars and nums counter
-            char c = password.charAt(i);
-            if (verifyNumber(c)) numberCount++;
-            else if (verifyLetter(c)) characterCount++;
-            else return false;
+        if (true) {
+            int counter = 0; //counter for password characters
+  
+            for (int i = 0; i <= 9; i++) { //checks for at least 1 number
+                String str1 = Integer.toString(i); //numbers to string
+                if (password.contains(str1)) {
+                    counter = 1;
+                }
+            }
+            if (counter == 0) {
+                return false;
+            }
+        } 
+        
+        if (!(password.contains("@") || password.contains("#")
+              || password.contains("!") || password.contains("~")
+              || password.contains("$") || password.contains("%")
+              || password.contains("^") || password.contains("&")
+              || password.contains("*") || password.contains("(")
+              || password.contains(")") || password.contains("-")
+              || password.contains("+") || password.contains("/")
+              || password.contains(":") || password.contains(".")
+              || password.contains(", ") || password.contains("<")
+              || password.contains(">") || password.contains("?")
+              || password.contains("|"))) { // checks for at least 1 special character
+            return false;
         }
-        return (characterCount >= 2 && numberCount >= 1); 
+        
+         if (true) {
+            int count = 0;
+            for (int i = 65; i <= 90; i++) {// checks for capital letters
+                char c = (char)i; //typecast
+ 
+                String str1 = Character.toString(c);
+                if (password.contains(str1)) {
+                    count = 1;
+                }
+            }
+            if (count == 0) {
+                return false;
+            }
+         }
+        return true;
     }
-
-    public static boolean verifyLetter(char c) { //letter verifier
-        c = Character.toUpperCase(c);
-        return (c >= 'A' && c <= 'Z');
-    }
-
-    public static boolean verifyNumber(char c) { //number verifier
-        return (c >= '0' && c <= '9');
-    }
-    
-    
 }
+        
+    
