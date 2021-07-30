@@ -15,36 +15,6 @@ public abstract class Account {
     private String email;
     private String password;
     
-    public static void main(String[] args) {
-        
-        Validations validate = new Validations();
-        Scanner scan = new Scanner(System.in);
-        String email, password;
-        
-        boolean bool = false;
-        
-        do{
-            System.out.println("Enter your email: ");
-            email = scan.nextLine();
-            bool = validate.validateEmail(email);
-            if(bool==false){
-                System.out.println("Email is invalid. Please try again.");
-            }
-        }
-        while(bool==false);
-        
-        do{
-            System.out.println("Enter your password: ");
-            password = scan.nextLine();
-            bool = validate.validatePassword(password);
-            if(bool==false){
-                System.out.println("Password is invalid. Please try again. "
-                        + "Password must contain at least 6 characters"
-                        + "Password must contain no special characters"
-                        + "Password must contain at least 1 number and 2 letters");
-            }
-        }
-        while(bool==false);
-    }
+    
 }
 

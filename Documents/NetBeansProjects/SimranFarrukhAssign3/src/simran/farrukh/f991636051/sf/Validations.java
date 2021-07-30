@@ -63,6 +63,11 @@ public class Validations {
          }
         return true;
     }
+    
+    static boolean validateStudenID(String studentID){
+       return studentID.matches( "[s][0-9][0-9][0-9][0-9][0-9][0-9]"
+               + "[0-9][0-9][0-9]");
+   }
 }
         
     
